@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 typedef struct {
+  int id;
   char nama[50];
   char rute[50];
   int kapasitas;
