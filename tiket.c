@@ -1,4 +1,5 @@
 #include "tiket.h"
+#include "kapal.h"
 
 Tiket tiket[] = {
   { "Bayu", "20-12-2023", 0 },
@@ -8,9 +9,18 @@ Tiket tiket[] = {
 };
 int sizeTiket = sizeof(tiket) / sizeof(tiket[0]);
 
+Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
+  for (int i = 0; i < sizeKapal; i++) {
+    if (kapal[i].id == pencarian) {
+      return kapal[i];
+    }
+  }
+}
+
 void printTabelTiket(Tiket *tiket, int sizeTiket) {
-  printf("%-15s %-25s %-15s\n", "Pembeli", "Tanggal berangkat", "ID Kapal");
+  printf("%-15s %-25s %-15s %-15s\n", "Pembeli", "Tanggal berangkat", "Nama kapal", "Rute");
   for (int i = 0; i < sizeTiket; i++) {
-    printf("%-15s %-25s %-15d\n", tiket[i].nama, tiket[i].tanggal, tiket[i].idKapal);
+    Kapal dataKapal = cariKapal(kapal, sizeKapal, tiket[i].idKapal);
+    printf("%-15s %-25s %-15s %-15s\n", tiket[i].nama, tiket[i].tanggal, dataKapal.nama, dataKapal.rute);
   }
 }
