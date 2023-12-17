@@ -54,9 +54,13 @@ void tambahTiket(Tiket **tiket, int *sizeTiket) {
   for (int i = 0; i < sizeKapal; i++) {
     printf("%d. %s - %s\n", i + 1, kapal[i].nama, kapal[i].rute);
   }
-
-  printf("Pilih rute: ");
-  scanf("%d", &(*tiket)[*sizeTiket].idKapal);
+  
+  Kapal dataKapal;
+  do {
+    printf("Pilih rute: ");
+    scanf("%d", &(*tiket)[*sizeTiket].idKapal);
+    dataKapal = cariKapal(kapal, sizeKapal, (*tiket)[*sizeTiket].idKapal);
+  } while (strlen(dataKapal.nama) == 0);
 
   char konfirmasi;
   printf("Konfirmasi tiket (y/n): ");
