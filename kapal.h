@@ -2,6 +2,7 @@
 #define KAPAL_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
   int id;
@@ -12,8 +13,9 @@ typedef struct {
 } Kapal;
 
 void printTabelKapal(Kapal *kapal, int sizeKapal);
+void initDummyKapal(Kapal **kapal, int *sizeKapal);
 
-extern Kapal kapal[];
+extern Kapal *kapal;
 extern int sizeKapal;
 
 #endif
