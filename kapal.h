@@ -8,6 +8,7 @@ typedef struct {
   char nama[50];
   char rute[50];
   int kapasitas;
+  int harga;
 } Kapal;
 
 void printTabelKapal(Kapal *kapal, int sizeKapal);
