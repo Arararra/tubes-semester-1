@@ -3,6 +3,24 @@
 Tiket *tiket = NULL;
 int sizeTiket = 0;
 
+void initDummyTiket(Tiket **tiket, int *sizeTiket) {
+  Tiket dummy[] = {
+    { "Bayu", "20-12-2023", 1 },
+    { "Andi", "25-12-2023", 2 },
+    { "Cahyadi", "23-12-2023", 3 },
+    { "Dewi", "20-12-2023", 1 },
+  };
+  int dummySize = sizeof(dummy) / sizeof(dummy[0]);
+
+  *tiket = realloc(*tiket, (*sizeTiket + dummySize) * sizeof(Tiket));
+
+  for (int i = 0; i < dummySize; i++) {
+    (*tiket)[*sizeTiket + i] = dummy[i];
+  }
+
+  *sizeTiket += dummySize;
+}
+
 Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
   for (int i = 0; i < sizeKapal; i++) {
     if (kapal[i].id == pencarian) {
@@ -24,7 +42,7 @@ void printTabelTiket(Tiket *tiket, int sizeTiket) {
   }
 }
 
-void buatTiket(Tiket **tiket, int *sizeTiket) {
+void tambahTiket(Tiket **tiket, int *sizeTiket) {
   *tiket = realloc(*tiket, (*sizeTiket + 1) * sizeof(Tiket));
 
   printf("Masukkan nama pembeli: ");
