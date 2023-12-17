@@ -1,8 +1,8 @@
 #include "kapal.h"
 
 Kapal kapal[] = {
-  { 1, "Kapal A", "Gresik", 5, 100000 },
-  { 2, "Kapal B", "Banjarmasin", 10, 100000 },
+  { 1, "Kapal A", "Gresik", 0, 100000 },
+  { 2, "Kapal B", "Banjarmasin", 5, 100000 },
   { 3, "Kapal C", "Lombok", 10, 100000 },
 };
 int sizeKapal = sizeof(kapal) / sizeof(kapal[0]);

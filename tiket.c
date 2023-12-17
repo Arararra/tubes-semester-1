@@ -19,6 +19,7 @@ void initDummyTiket(Tiket **tiket, int *sizeTiket) {
   }
 
   *sizeTiket += dummySize;
+  return;
 }
 
 Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
@@ -27,6 +28,7 @@ Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
       return kapal[i];
     }
   }
+  return (Kapal){ -1, "", "", 0, 0 };
 }
 
 void printTabelTiket(Tiket *tiket, int sizeTiket) {
@@ -40,6 +42,7 @@ void printTabelTiket(Tiket *tiket, int sizeTiket) {
     Kapal dataKapal = cariKapal(kapal, sizeKapal, tiket[i].idKapal);
     printf("%-15s %-25s %-15s %-15s\n", tiket[i].nama, tiket[i].tanggal, dataKapal.nama, dataKapal.rute);
   }
+  return;
 }
 
 void tambahTiket(Tiket **tiket, int *sizeTiket) {
@@ -51,16 +54,19 @@ void tambahTiket(Tiket **tiket, int *sizeTiket) {
   printf("Masukkan tanggal keberangkatan: ");
   scanf(" %[^\n]s", (*tiket)[*sizeTiket].tanggal);
 
+  printf("%-5s %-15s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Kapasitas");
   for (int i = 0; i < sizeKapal; i++) {
-    printf("%d. %s - %s\n", i + 1, kapal[i].nama, kapal[i].rute);
+    printf("%-5d %-15s %-15s %-15d\n", i + 1, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas);
   }
   
   Kapal dataKapal;
   do {
-    printf("Pilih rute: ");
+    printf("Pilih kapal: ");
     scanf("%d", &(*tiket)[*sizeTiket].idKapal);
     dataKapal = cariKapal(kapal, sizeKapal, (*tiket)[*sizeTiket].idKapal);
-  } while (strlen(dataKapal.nama) == 0);
+    if (dataKapal.id == -1) printf("Kapal tidak tersedia\n");
+    else if (dataKapal.kapasitas == 0) printf("Kapal sudah penuh\n");
+  } while (dataKapal.id == -1 || dataKapal.kapasitas == 0);
 
   char konfirmasi;
   printf("Konfirmasi tiket (y/n): ");
@@ -76,4 +82,6 @@ void tambahTiket(Tiket **tiket, int *sizeTiket) {
     *tiket = realloc(*tiket, *sizeTiket * sizeof(Tiket));
     printf("Tiket batal dibuat\n");
   }
+
+  return;
 }
