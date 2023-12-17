@@ -2,6 +2,8 @@
 #define TIKET_H
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "kapal.h"
 
 typedef struct {
   char nama[50];
@@ -10,8 +12,9 @@ typedef struct {
 } Tiket;
 
 void printTabelTiket(Tiket *tiket, int sizeTiket);
+void buatTiket(Tiket **tiket, int *sizeTiket);
 
-extern Tiket tiket[];
+extern Tiket *tiket;
 extern int sizeTiket;
 
 #endif
