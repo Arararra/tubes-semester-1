@@ -6,7 +6,6 @@
 // clear ; gcc -o tubes main.c kapal.c tiket.c ; ./tubes
 
 void main() {
-  initDummyKapal(&kapal, &sizeKapal);
   initDummyTiket(&tiket, &sizeTiket);
 
   startingPoint:

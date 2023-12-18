@@ -13,9 +13,9 @@ typedef struct {
 } Kapal;
 
 void printTabelKapal(Kapal *kapal, int sizeKapal);
-void initDummyKapal(Kapal **kapal, int *sizeKapal);
 
-extern Kapal *kapal;
+extern Kapal kapal[];
 extern int sizeKapal;
+extern int maxKapal;
 
 #endif
