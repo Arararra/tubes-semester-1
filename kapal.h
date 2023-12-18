@@ -12,6 +12,7 @@ typedef struct {
   int harga;
 } Kapal;
 
+Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian);
 void printTabelKapal(Kapal *kapal, int sizeKapal);
 void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal);
 

@@ -22,15 +22,6 @@ void initDummyTiket(Tiket **tiket, int *sizeTiket) {
   return;
 }
 
-Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
-  for (int i = 0; i < sizeKapal; i++) {
-    if (kapal[i].id == pencarian) {
-      return kapal[i];
-    }
-  }
-  return (Kapal){ -1, "", "", 0, 0 };
-}
-
 void printTabelTiket(Tiket *tiket, int sizeTiket, Kapal *kapal, int sizeKapal) {
   if (sizeTiket == 0) {
     printf("Data tiket kosong\n");
@@ -54,10 +45,7 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
   printf("Masukkan tanggal keberangkatan: ");
   scanf(" %[^\n]s", (*tiket)[*sizeTiket].tanggal);
 
-  printf("%-5s %-15s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Kapasitas");
-  for (int i = 0; i < sizeKapal; i++) {
-    printf("%-5d %-15s %-15s %-15d\n", kapal[i].id, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas);
-  }
+  printTabelKapal(kapal, sizeKapal);
   
   Kapal dataKapal;
   do {

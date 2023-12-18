@@ -8,15 +8,24 @@ Kapal kapal[] = {
 int sizeKapal = sizeof(kapal) / sizeof(kapal[0]);
 int maxKapal = 4;
 
+Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
+  for (int i = 0; i < sizeKapal; i++) {
+    if (kapal[i].id == pencarian) {
+      return kapal[i];
+    }
+  }
+  return (Kapal){ -1, "", "", 0, 0 };
+}
+
 void printTabelKapal(Kapal *kapal, int sizeKapal) {
   if (sizeKapal == 0) {
     printf("Data kapal kosong\n");
     return;
   }
 
-  printf("%-15s %-15s %-15s %-15s\n", "Nama kapal", "Rute", "Kapasitas", "Harga");
+  printf("%-5s %-15s %-15s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Kapasitas", "Harga");
   for (int i = 0; i < sizeKapal; i++) {
-    printf("%-15s %-15s %-15d %-15d\n", kapal[i].nama, kapal[i].rute, kapal[i].kapasitas, kapal[i].harga);
+    printf("%-5d %-15s %-15s %-15d %-15d\n", kapal[i].id, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas, kapal[i].harga);
   }
 }
 
