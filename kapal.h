@@ -13,6 +13,7 @@ typedef struct {
 } Kapal;
 
 void printTabelKapal(Kapal *kapal, int sizeKapal);
+void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal);
 
 extern Kapal kapal[];
 extern int sizeKapal;

@@ -27,7 +27,7 @@ void main() {
     printTabelTiket(tiket, sizeTiket);
     break;
   case 3:
-    // tambahKapal(&kapal, &sizeKapal);
+    tambahKapal(kapal, &sizeKapal, maxKapal);
     break;
   case 4:
     tambahTiket(&tiket, &sizeTiket);

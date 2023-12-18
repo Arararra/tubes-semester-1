@@ -56,7 +56,7 @@ void tambahTiket(Tiket **tiket, int *sizeTiket) {
 
   printf("%-5s %-15s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Kapasitas");
   for (int i = 0; i < sizeKapal; i++) {
-    printf("%-5d %-15s %-15s %-15d\n", i + 1, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas);
+    printf("%-5d %-15s %-15s %-15d\n", kapal[i].id, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas);
   }
   
   Kapal dataKapal;

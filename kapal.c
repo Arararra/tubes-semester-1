@@ -19,3 +19,38 @@ void printTabelKapal(Kapal *kapal, int sizeKapal) {
     printf("%-15s %-15s %-15d %-15d\n", kapal[i].nama, kapal[i].rute, kapal[i].kapasitas, kapal[i].harga);
   }
 }
+
+void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal) {
+  if (*sizeKapal >= maxKapal) {
+    printf("Dermaga sudah penuh\n");
+    return;
+  }
+
+  Kapal kapalBaru;
+  kapalBaru.id = 4;
+
+  printf("Masukkan nama kapal: ");
+  scanf(" %[^\n]s", kapalBaru.nama);
+
+  printf("Masukkan rute: ");
+  scanf(" %[^\n]s", kapalBaru.rute);
+
+  printf("Masukkan kapasitas: ");
+  scanf("%d", &kapalBaru.kapasitas);
+
+  printf("Masukkan harga: ");
+  scanf("%d", &kapalBaru.harga);
+
+  char konfirmasi;
+  printf("Konfirmasi tiket (y/n): ");
+  scanf(" %c", &konfirmasi);
+
+  if (konfirmasi == 'y' || konfirmasi == 'Y') {
+    kapal[*sizeKapal] = kapalBaru;
+    
+    printf("Kapal berhasil ditambahkan\n");
+    printTabelKapal(kapal, *sizeKapal);
+  } else {
+    printf("Kapal batal ditambahkan\n");
+  }
+}
