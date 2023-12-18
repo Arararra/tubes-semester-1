@@ -11,8 +11,8 @@ typedef struct {
   int idKapal;
 } Tiket;
 
-void printTabelTiket(Tiket *tiket, int sizeTiket);
-void tambahTiket(Tiket **tiket, int *sizeTiket);
+void printTabelTiket(Tiket *tiket, int sizeTiket, Kapal *kapal, int sizeKapal);
+void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal);
 void initDummyTiket(Tiket **tiket, int *sizeTiket);
 
 extern Tiket *tiket;

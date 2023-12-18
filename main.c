@@ -24,13 +24,13 @@ void main() {
     printTabelKapal(kapal, sizeKapal);
     break;
   case 2:
-    printTabelTiket(tiket, sizeTiket);
+    printTabelTiket(tiket, sizeTiket, kapal, sizeKapal);
     break;
   case 3:
     tambahKapal(kapal, &sizeKapal, maxKapal);
     break;
   case 4:
-    tambahTiket(&tiket, &sizeTiket);
+    tambahTiket(&tiket, &sizeTiket, kapal, sizeKapal);
     break;
   case 5:
     printf("Terima kasih telah menggunakan program kami :)\n");

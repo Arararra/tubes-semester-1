@@ -31,7 +31,7 @@ Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
   return (Kapal){ -1, "", "", 0, 0 };
 }
 
-void printTabelTiket(Tiket *tiket, int sizeTiket) {
+void printTabelTiket(Tiket *tiket, int sizeTiket, Kapal *kapal, int sizeKapal) {
   if (sizeTiket == 0) {
     printf("Data tiket kosong\n");
     return;
@@ -45,7 +45,7 @@ void printTabelTiket(Tiket *tiket, int sizeTiket) {
   return;
 }
 
-void tambahTiket(Tiket **tiket, int *sizeTiket) {
+void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
   *tiket = realloc(*tiket, (*sizeTiket + 1) * sizeof(Tiket));
 
   printf("Masukkan nama pembeli: ");
@@ -77,7 +77,7 @@ void tambahTiket(Tiket **tiket, int *sizeTiket) {
     (*sizeTiket)++;
     
     printf("Tiket berhasil dibuat\n");
-    printTabelTiket(*tiket, *sizeTiket);
+    printTabelTiket(*tiket, *sizeTiket, kapal, sizeKapal);
   } else {
     *tiket = realloc(*tiket, *sizeTiket * sizeof(Tiket));
     printf("Tiket batal dibuat\n");
