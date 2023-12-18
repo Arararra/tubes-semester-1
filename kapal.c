@@ -39,8 +39,6 @@ void tambahKapal(Kapal *kapal, int *sizeKapal, int *maxKapal) {
   kapalBaru.id = *sizeKapal + 1;
   int keepMaxKapal = *maxKapal;
 
-  printf("Before adding: %d - %d\n", *sizeKapal, *maxKapal);
-
   printf("Masukkan nama kapal: ");
   scanf(" %[^\n]s", kapalBaru.nama);
 
