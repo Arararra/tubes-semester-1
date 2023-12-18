@@ -5,10 +5,10 @@ int sizeTiket = 0;
 
 void initDummyTiket(Tiket **tiket, int *sizeTiket) {
   Tiket dummy[] = {
-    { "Bayu", "20-12-2023", 1 },
-    { "Andi", "25-12-2023", 2 },
     { "Cahyadi", "23-12-2023", 3 },
+    { "Andi", "25-12-2023", 2 },
     { "Dewi", "20-12-2023", 1 },
+    { "Bayu", "20-12-2023", 1 },
   };
   int dummySize = sizeof(dummy) / sizeof(dummy[0]);
 
@@ -71,6 +71,26 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
     printf("Tiket batal dibuat\n");
   }
 
+  return;
+}
+
+void sortTiket(Tiket *tiket, int sizeTiket) {
+  int i, j;
+  Tiket key;
+
+  for (i = 1; i < sizeTiket; i++) {
+    key = tiket[i];
+    j = i - 1;
+
+    while (j >= 0 && strcmp(tiket[j].nama, key.nama) > 0) {
+      tiket[j + 1] = tiket[j];
+      j = j - 1;
+    }
+
+    tiket[j + 1] = key;
+  }
+
+  printf("Data tiket berhasil diurutkan\n");
   return;
 }
 
