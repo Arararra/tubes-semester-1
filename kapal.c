@@ -1,12 +1,11 @@
 #include "kapal.h"
 
-Kapal kapal[] = {
+Kapal kapal[4] = {
   { 1, "Kapal A", "Gresik", 0, 100000 },
   { 2, "Kapal B", "Banjarmasin", 5, 100000 },
   { 3, "Kapal C", "Lombok", 10, 100000 },
 };
-int sizeKapal = sizeof(kapal) / sizeof(kapal[0]);
-int maxKapal = 4;
+int sizeKapal = 3;
 
 Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
   for (int i = 0; i < sizeKapal; i++) {
@@ -14,7 +13,7 @@ Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian) {
       return kapal[i];
     }
   }
-  return (Kapal){ -1, "", "", 0, 0 };
+  return (Kapal){ 0, "", "", 0, 0 };
 }
 
 void printTabelKapal(Kapal *kapal, int sizeKapal) {
@@ -29,15 +28,14 @@ void printTabelKapal(Kapal *kapal, int sizeKapal) {
   }
 }
 
-void tambahKapal(Kapal *kapal, int *sizeKapal, int *maxKapal) {
-  if (*sizeKapal >= *maxKapal) {
+void tambahKapal(Kapal *kapal, int *sizeKapal) {
+  if (*sizeKapal >= 4) {
     printf("Dermaga sudah penuh\n");
     return;
   }
 
   Kapal kapalBaru;
-  kapalBaru.id = *sizeKapal + 1;
-  int keepMaxKapal = *maxKapal;
+  kapalBaru.id = (*sizeKapal > 0) ? kapal[*sizeKapal - 1].id + 1 : 1;
 
   printf("Masukkan nama kapal: ");
   scanf(" %[^\n]s", kapalBaru.nama);
@@ -57,12 +55,13 @@ void tambahKapal(Kapal *kapal, int *sizeKapal, int *maxKapal) {
 
   if (konfirmasi == 'y' || konfirmasi == 'Y') {
     kapal[*sizeKapal] = kapalBaru;
-    printf("Kapal berhasil ditambahkan\n");
+    (*sizeKapal)++;
+    
+    printf("Kapal berhasil ditambahkan %d\n", *sizeKapal);
     printTabelKapal(kapal, *sizeKapal);
   } else {
     printf("Kapal batal ditambahkan\n");
   }
 
-  *maxKapal = keepMaxKapal;
   return;
 }

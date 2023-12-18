@@ -52,7 +52,7 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
     printf("Pilih kapal: ");
     scanf("%d", &(*tiket)[*sizeTiket].idKapal);
     dataKapal = cariKapal(kapal, sizeKapal, (*tiket)[*sizeTiket].idKapal);
-    if (dataKapal.id == -1) printf("Kapal tidak tersedia\n");
+    if (dataKapal.id == 0) printf("Kapal tidak tersedia\n");
     else if (dataKapal.kapasitas == 0) printf("Kapal sudah penuh\n");
   } while (dataKapal.id == -1 || dataKapal.kapasitas == 0);
 
@@ -93,7 +93,7 @@ void departKapal(Kapal *kapal, int *sizeKapal, Tiket *tiket, int *sizeTiket) {
   if (konfirmasi == 'y' || konfirmasi == 'Y') {
     // hapus tiket yang terkait ke kapal
     for (int i = 0; i < *sizeTiket; i++) {
-      if (tiket[i].idKapal == idKapalPilihan) {
+      if (tiket[i].idKapal == kapalPilihan.id) {
         for (int j = i; j < *sizeTiket - 1; j++) {
           tiket[j] = tiket[j + 1];
         }
@@ -103,8 +103,10 @@ void departKapal(Kapal *kapal, int *sizeKapal, Tiket *tiket, int *sizeTiket) {
     }
 
     // hapus kapal
-    for (int i = idKapalPilihan - 1; i < *sizeKapal - 1; i++) {
-      kapal[i] = kapal[i + 1];
+    for (int i = 0; i < *sizeKapal; i++) {
+      if (kapal[i].id >= kapalPilihan.id) {      
+        kapal[i] = kapal[i + 1];
+      }
     }
     (*sizeKapal)--;
     
