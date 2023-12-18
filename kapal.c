@@ -29,14 +29,17 @@ void printTabelKapal(Kapal *kapal, int sizeKapal) {
   }
 }
 
-void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal) {
-  if (*sizeKapal >= maxKapal) {
+void tambahKapal(Kapal *kapal, int *sizeKapal, int *maxKapal) {
+  if (*sizeKapal >= *maxKapal) {
     printf("Dermaga sudah penuh\n");
     return;
   }
 
   Kapal kapalBaru;
-  kapalBaru.id = 4;
+  kapalBaru.id = *sizeKapal + 1;
+  int keepMaxKapal = *maxKapal;
+
+  printf("Before adding: %d - %d\n", *sizeKapal, *maxKapal);
 
   printf("Masukkan nama kapal: ");
   scanf(" %[^\n]s", kapalBaru.nama);
@@ -51,15 +54,17 @@ void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal) {
   scanf("%d", &kapalBaru.harga);
 
   char konfirmasi;
-  printf("Konfirmasi tiket (y/n): ");
+  printf("Konfirmasi kapal (y/n): ");
   scanf(" %c", &konfirmasi);
 
   if (konfirmasi == 'y' || konfirmasi == 'Y') {
     kapal[*sizeKapal] = kapalBaru;
-    
     printf("Kapal berhasil ditambahkan\n");
     printTabelKapal(kapal, *sizeKapal);
   } else {
     printf("Kapal batal ditambahkan\n");
   }
+
+  *maxKapal = keepMaxKapal;
+  return;
 }

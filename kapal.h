@@ -14,7 +14,7 @@ typedef struct {
 
 Kapal cariKapal(Kapal *kapal, int sizeKapal, int pencarian);
 void printTabelKapal(Kapal *kapal, int sizeKapal);
-void tambahKapal(Kapal *kapal, int *sizeKapal, int maxKapal);
+void tambahKapal(Kapal *kapal, int *sizeKapal, int *maxKapal);
 
 extern Kapal kapal[];
 extern int sizeKapal;

@@ -73,3 +73,45 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
 
   return;
 }
+
+void departKapal(Kapal *kapal, int *sizeKapal, Tiket *tiket, int *sizeTiket) {
+  printTabelKapal(kapal, *sizeKapal);
+  
+  int idKapalPilihan;
+  Kapal kapalPilihan;
+  do {
+    printf("Pilih kapal: ");
+    scanf("%d", &idKapalPilihan);
+    kapalPilihan = cariKapal(kapal, *sizeKapal, idKapalPilihan);
+    if (kapalPilihan.id == -1) printf("Kapal tidak tersedia\n");
+  } while (kapalPilihan.id == -1);
+
+  char konfirmasi;
+  printf("Konfirmasi keberangkatan (y/n): ");
+  scanf(" %c", &konfirmasi);
+
+  if (konfirmasi == 'y' || konfirmasi == 'Y') {
+    // hapus tiket yang terkait ke kapal
+    for (int i = 0; i < *sizeTiket; i++) {
+      if (tiket[i].idKapal == idKapalPilihan) {
+        for (int j = i; j < *sizeTiket - 1; j++) {
+          tiket[j] = tiket[j + 1];
+        }
+        (*sizeTiket)--;
+        i--;
+      }
+    }
+
+    // hapus kapal
+    for (int i = idKapalPilihan - 1; i < *sizeKapal - 1; i++) {
+      kapal[i] = kapal[i + 1];
+    }
+    (*sizeKapal)--;
+    
+    printf("Kapal telah berangkat\n");
+  } else {
+    printf("Kapal batal berangkat\n");
+  }
+
+  return;
+}

@@ -14,6 +14,7 @@ void main() {
   printf("2. Lihat data tiket\n");
   printf("3. Tambahkan kapal\n");
   printf("4. Buat tiket baru\n");
+  printf("5. Berangkatkan kapal\n");
   printf("0. Keluar\n");
   printf("Masukkan pilihan anda: ");
   int inputPilihan = -1;
@@ -27,10 +28,13 @@ void main() {
     printTabelTiket(tiket, sizeTiket, kapal, sizeKapal);
     break;
   case 3:
-    tambahKapal(kapal, &sizeKapal, maxKapal);
+    tambahKapal(kapal, &sizeKapal, &maxKapal);
     break;
   case 4:
     tambahTiket(&tiket, &sizeTiket, kapal, sizeKapal);
+    break;
+  case 5:
+    departKapal(kapal, &sizeKapal, tiket, &sizeTiket);
     break;
   case 0:
     printf("Terima kasih telah menggunakan program kami :)\n");
