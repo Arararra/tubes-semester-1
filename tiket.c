@@ -61,7 +61,11 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
   scanf(" %c", &konfirmasi);
 
   if (konfirmasi == 'y' || konfirmasi == 'Y') {
-    kapal[(*tiket)[*sizeTiket].idKapal - 1].kapasitas--;
+    for (int i = 0; i < sizeKapal; i++) {
+      if (kapal[i].id == (*tiket)[*sizeTiket].idKapal) {
+        kapal[i].kapasitas--;
+      }
+    }
     (*sizeTiket)++;
     
     printf("Tiket berhasil dibuat\n");
