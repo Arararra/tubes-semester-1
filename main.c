@@ -13,7 +13,7 @@ void main() {
   printf("1. Lihat data kapal\n");
   printf("2. Lihat data tiket\n");
   printf("3. Tambahkan kapal\n");
-  printf("4. Buat tiket baru\n");
+  printf("4. Beli tiket\n");
   printf("5. Berangkatkan kapal\n");
   printf("6. Urutkan data tiket berdasarkan nama\n");
   printf("0. Keluar\n");

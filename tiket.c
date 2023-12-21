@@ -5,10 +5,10 @@ int sizeTiket = 0;
 
 void initDummyTiket(Tiket **tiket, int *sizeTiket) {
   Tiket dummy[] = {
-    { "Cahyadi", "23-12-2023", 3 },
-    { "Andi", "25-12-2023", 2 },
-    { "Dewi", "20-12-2023", 1 },
-    { "Bayu", "20-12-2023", 1 },
+    { "Cahyadi", 3 },
+    { "Andi", 2 },
+    { "Dewi", 1 },
+    { "Bayu", 1 },
   };
   int dummySize = sizeof(dummy) / sizeof(dummy[0]);
 
@@ -31,7 +31,7 @@ void printTabelTiket(Tiket *tiket, int sizeTiket, Kapal *kapal, int sizeKapal) {
   printf("%-15s %-25s %-15s %-15s\n", "Pembeli", "Tanggal berangkat", "Nama kapal", "Rute");
   for (int i = 0; i < sizeTiket; i++) {
     Kapal dataKapal = cariKapal(kapal, sizeKapal, tiket[i].idKapal);
-    printf("%-15s %-25s %-15s %-15s\n", tiket[i].nama, tiket[i].tanggal, dataKapal.nama, dataKapal.rute);
+    printf("%-15s %-25s %-15s %-15s\n", tiket[i].nama, dataKapal.tanggal, dataKapal.nama, dataKapal.rute);
   }
   return;
 }
@@ -41,9 +41,6 @@ void tambahTiket(Tiket **tiket, int *sizeTiket, Kapal *kapal, int sizeKapal) {
 
   printf("Masukkan nama pembeli: ");
   scanf(" %[^\n]s", (*tiket)[*sizeTiket].nama);
-
-  printf("Masukkan tanggal keberangkatan: ");
-  scanf(" %[^\n]s", (*tiket)[*sizeTiket].tanggal);
 
   printTabelKapal(kapal, sizeKapal);
   

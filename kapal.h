@@ -9,6 +9,7 @@ typedef struct {
   int id;
   char nama[100];
   char rute[100];
+  char tanggal[100];
   int kapasitas;
   int harga;
 } Kapal;

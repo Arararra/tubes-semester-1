@@ -7,7 +7,6 @@
 
 typedef struct {
   char nama[50];
-  char tanggal[100];
   int idKapal;
 } Tiket;
 

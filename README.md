@@ -6,12 +6,12 @@ Program ini merupakan aplikasi sederhana untuk manajemen loket untuk pemesanan t
 
 #### 1. Array dan Struktur Data
 - **Array Kapal (`kapal.c` dan `kapal.h`):**
-  - Digunakan untuk menyimpan data kapal, termasuk ID, nama kapal, rute, kapasitas, dan harga.
+  - Digunakan untuk menyimpan data kapal, termasuk ID, nama kapal, rute, tanggal keberangkatan, kapasitas, dan harga.
   - Ukuran array kapal memiliki nilai maksimal `4`.
   - Terdapat fungsi-fungsi untuk mencari kapal berdasarkan ID (`cariKapal`), menampilkan tabel kapal (`printTabelKapal`), menambah kapal baru (`tambahKapal`).
 
 - **Array Tiket (`tiket.c` dan `tiket.h`):**
-  - Digunakan untuk menyimpan data tiket, termasuk nama pembeli, tanggal keberangkatan, dan ID kapal terkait.
+  - Digunakan untuk menyimpan data tiket, termasuk nama pembeli, dan ID kapal terkait.
   - Ukuran array tiket dinamis.
   - Terdapat fungsi-fungsi untuk inisialisasi dummy tiket (`initDummyTiket`), menampilkan tabel tiket dengan informasi kapal (`printTabelTiket`), menambah tiket baru (`tambahTiket`), mengurutkan data tiket berdasarkan nama pembeli (`sortTiket`), dan memberangkatkan kapal (`departKapal`).
 

@@ -1,9 +1,9 @@
 #include "kapal.h"
 
 Kapal kapal[4] = {
-  { 1, "Kapal A", "Gresik", 0, 100000 },
-  { 2, "Kapal B", "Banjarmasin", 5, 100000 },
-  { 3, "Kapal C", "Lombok", 10, 100000 },
+  { 1, "Kapal A", "Gresik", "12-12-2023", 0, 100000 },
+  { 2, "Kapal B", "Banjarmasin", "17-12-2023", 5, 100000 },
+  { 3, "Kapal C", "Lombok", "20-12-2023", 10, 100000 },
 };
 int sizeKapal = 3;
 
@@ -22,9 +22,9 @@ void printTabelKapal(Kapal *kapal, int sizeKapal) {
     return;
   }
 
-  printf("%-5s %-15s %-15s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Kapasitas", "Harga");
+  printf("%-5s %-15s %-15s %-25s %-15s %-15s\n", "ID", "Nama kapal", "Rute", "Tanggal Berangkat", "Kapasitas", "Harga");
   for (int i = 0; i < sizeKapal; i++) {
-    printf("%-5d %-15s %-15s %-15d %-15d\n", kapal[i].id, kapal[i].nama, kapal[i].rute, kapal[i].kapasitas, kapal[i].harga);
+    printf("%-5d %-15s %-15s %-25s %-15d %-15d\n", kapal[i].id, kapal[i].nama, kapal[i].rute, kapal[i].tanggal, kapal[i].kapasitas, kapal[i].harga);
   }
 }
 
@@ -42,6 +42,9 @@ void tambahKapal(Kapal *kapal, int *sizeKapal) {
 
   printf("Masukkan rute: ");
   scanf(" %[^\n]s", kapalBaru.rute);
+
+  printf("Masukkan tanggal keberangkatan: ");
+  scanf(" %[^\n]s", kapalBaru.tanggal);
 
   printf("Masukkan kapasitas: ");
   scanf("%d", &kapalBaru.kapasitas);
