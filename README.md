@@ -83,38 +83,49 @@ gcc -o tubes main.c kapal.c tiket.c
 #### 3. Screenshot code
 
 - Code tiket.c
+
 ![Code kapal.c](./screenshots/code/tiketc.png)
 
 - Code tiket.h
+
 ![Code kapal.h](./screenshots/code/tiketh.png)
 
 - Code kapal.c
+
 ![Code kapal.c](./screenshots/code/kapalc.png)
 
 - Code kapal.h
+
 ![Code kapal.h](./screenshots/code/kapalh.png)
 
 - Code main.c
+
 ![Code main.c](./screenshots/code/main.png)
 
 #### 4. Screenshot program
 
 - Lihat kapal
+
 ![Lihat kapal](./screenshots/output/lihat-kapal.png)
 
 - Lihat tiket
+
 ![Lihat tiket](./screenshots/output/lihat-tiket.png)
 
 - Tambah kapal
+
 ![Tambah kapal](./screenshots/output/tambah-kapal.png)
 
 - Beli tiket
+
 ![Beli tiket](./screenshots/output/tambah-tiket.png)
 
 - Berangkatkan kapal
+
 ![Berangkatkan kapal](./screenshots/output/depart-kapal.png)
 
 - Sort tiket
+
 ![Sort tiket](./screenshots/output/sort-tiket.png)
 
 #### 5. Penutup
