@@ -74,10 +74,19 @@ gcc -o tubes main.c kapal.c tiket.c
 - Pilih opsi 1 atau 2 untuk melihat data kapal atau tiket.
 
 
+![Lihat kapal](./screenshots/output/lihat-kapal.png)
+
+
+![Lihat tiket](./screenshots/output/lihat-tiket.png)
+
+
 6.  **Tambahkan Kapal:**
 
 
 - Pilih opsi 3 untuk menambahkan kapal baru. Ikuti petunjuk yang muncul di layar.
+
+
+![Tambah kapal](./screenshots/output/tambah-kapal.png)
 
 
 7.  **Beli tiket:**
@@ -86,10 +95,16 @@ gcc -o tubes main.c kapal.c tiket.c
 - Pilih opsi 4 untuk membuat tiket baru. Ikuti petunjuk untuk mengisi informasi tiket.
 
 
+![Beli tiket](./screenshots/output/tambah-tiket.png)
+
+
 8.  **Berangkatkan Kapal:**
 
 
 - Pilih opsi 5 untuk memberangkatkan kapal. Pilih kapal yang ingin diberangkatkan dan konfirmasi.
+
+
+![Berangkatkan kapal](./screenshots/output/depart-kapal.png)
 
 
 9.  **Urutkan Data Tiket:**
@@ -98,10 +113,16 @@ gcc -o tubes main.c kapal.c tiket.c
 - Pilih opsi 6 untuk mengurutkan data tiket berdasarkan nama pembeli.
 
 
+![Berangkatkan kapal](./screenshots/output/sort-tiket.png)
+
+
 10.  **Keluar:**
 
 
 - Pilih opsi 0 untuk keluar dari program.
+
+
+![Close program](./screenshots/output/close-program.png)
 
 
 11.  **Selesai:**
