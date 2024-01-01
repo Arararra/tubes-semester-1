@@ -164,46 +164,7 @@ gcc -o tubes main.c kapal.c tiket.c
 ![Code main.c](./screenshots/code/main.png)
 
 
-#### 4. Screenshot program
-
-
-- Lihat kapal
-
-
-![Lihat kapal](./screenshots/output/lihat-kapal.png)
-
-
-- Lihat tiket
-
-
-![Lihat tiket](./screenshots/output/lihat-tiket.png)
-
-
-- Tambah kapal
-
-
-![Tambah kapal](./screenshots/output/tambah-kapal.png)
-
-
-- Beli tiket
-
-
-![Beli tiket](./screenshots/output/tambah-tiket.png)
-
-
-- Berangkatkan kapal
-
-
-![Berangkatkan kapal](./screenshots/output/depart-kapal.png)
-
-
-- Sort tiket
-
-
-![Sort tiket](./screenshots/output/sort-tiket.png)
-
-
-#### 5. Penutup
+#### 4. Penutup
 
 
 Kurang lebih seperti itu lah dokumentasi kecil dari program yang kami buat dengan sepenuh hati, jika terdapat kode yang redundant atau kurang efisien kami mohon maaf karena kami masih belajar.
