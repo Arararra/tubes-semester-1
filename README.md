@@ -23,6 +23,9 @@ Program ini merupakan aplikasi sederhana untuk manajemen loket untuk pemesanan t
 - Terdapat fungsi-fungsi untuk inisialisasi dummy tiket (`initDummyTiket`), menampilkan tabel tiket dengan informasi kapal (`printTabelTiket`), membeli tiket (`tambahTiket`), mengurutkan data tiket berdasarkan nama pembeli (`sortTiket`), dan memberangkatkan kapal (`departKapal`).
 
 
+#### 2. Search dan sort
+
+
 - **Linear search**
 - Jenis search yang kami gunakan dalam program ini adalah linear search dikarenakan jenis search ini terbilang cukup mudah dan juga efisien untuk mencari data dengan ukuran yang relatif kecil.
 
@@ -31,7 +34,7 @@ Program ini merupakan aplikasi sederhana untuk manajemen loket untuk pemesanan t
 - Jenis sorting yang kami gunakan dalam program ini adalah insertation sort dikarenakan kemudahannya dalam penulisan program sehingga tidak memerlukan banyak line untuk melakukan sorting.
 
 
-#### 2. User Manual
+#### 3. User Manual
 
 
 ##### Langkah-langkah Penggunaan Program:
@@ -139,7 +142,7 @@ gcc -o tubes main.c kapal.c tiket.c
 - Program akan berhenti dan menampilkan pesan terima kasih.
 
 
-#### 3. Screenshot code
+#### 4. Screenshot code
 
 
 - Code tiket.c
@@ -172,7 +175,7 @@ gcc -o tubes main.c kapal.c tiket.c
 ![Code main.c](./screenshots/code/main.png)
 
 
-#### 4. Penutup
+#### 5. Penutup
 
 
 Kurang lebih seperti itu lah dokumentasi kecil dari program yang kami buat dengan sepenuh hati, jika terdapat kode yang redundant atau kurang efisien kami mohon maaf karena kami masih belajar.
