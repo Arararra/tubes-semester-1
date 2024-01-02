@@ -23,6 +23,14 @@ Program ini merupakan aplikasi sederhana untuk manajemen loket untuk pemesanan t
 - Terdapat fungsi-fungsi untuk inisialisasi dummy tiket (`initDummyTiket`), menampilkan tabel tiket dengan informasi kapal (`printTabelTiket`), membeli tiket (`tambahTiket`), mengurutkan data tiket berdasarkan nama pembeli (`sortTiket`), dan memberangkatkan kapal (`departKapal`).
 
 
+- **Linear search**
+- Jenis search yang kami gunakan dalam program ini adalah linear search dikarenakan jenis search ini terbilang cukup mudah dan juga efisien untuk mencari data dengan ukuran yang relatif kecil.
+
+
+- **Insertation sort**
+- Jenis sorting yang kami gunakan dalam program ini adalah insertation sort dikarenakan kemudahannya dalam penulisan program sehingga tidak memerlukan banyak line untuk melakukan sorting.
+
+
 #### 2. User Manual
 
 
